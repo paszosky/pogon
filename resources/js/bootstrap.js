@@ -31,3 +31,16 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
 //     enabledTransports: ['ws', 'wss'],
 // });
+
+try {
+    window.Popper = require('popper.js').default;
+    window.$ = window.jQuery = require('jquery');
+    const Swal = require('sweetalert2');
+
+    require('bootstrap');
+} catch (e) {}
+
+// import jQuery from 'jquery';
+// window.$ = jQuery;
+
+// const Swal = require('sweetalert2');
