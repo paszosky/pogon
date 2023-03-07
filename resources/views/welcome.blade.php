@@ -24,6 +24,26 @@
         <h4 class="mb-5"><strong>Latest posts</strong></h4>
 
         <div class="row">
+          <div class="col-md">
+            <h6 class="text-uppercase font-weight-bold">Kategorie</h6>
+            @foreach ($categories as $category)
+            <div class="">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="category-{{ $category->id }}">
+                <label class="custom-control-label" for="category-{{ $category->id }}">{{ $category->name }}</label>
+              </div>
+            </div>
+            @endforeach
+          </div>
+          <div class="col-md">
+            One of three columns
+          </div>
+          <div class="col-md">
+            One of three columns
+          </div>
+        </div>
+
+        <div class="row">
             @foreach($products as $product)
                 <div class="col-lg-4 col-md-12 mb-4">
                     <div class="card">
