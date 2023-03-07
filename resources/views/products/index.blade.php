@@ -4,18 +4,18 @@
 <div class="container">
     <div class="row justify-content-center">
         
-        <div class="col-md-4">
+        <div class="col-md-6">
             Lista produktów
         </div>
-        <div class="col-md-4">
-            <a class="float-right" href="{{ route('products.create') }}">
+        <div class="col-md-6 float-right">
+            <a class="" href="{{ route('products.create') }}">
                 <button type="button" class="btn btn-primary">Dodaj</button>
             </a>
         </div>
         
     </div>
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -25,6 +25,7 @@
                 <th scope="col">Ilość</th>
                 <th scope="col">Cena</th>
                 <th scope="col">Data</th>
+                <th scope="col">Kategoria</th>
                 <th scope="col">Akcje</th>
                 </tr>
             </thead>
@@ -37,6 +38,7 @@
                     <td>{{ $product->amount }}</td>
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->created_at }}</td>
+                    <td>@if($product->hasCategory()){{ $product->category->name }}@endif</td>
                     <td>
                         <a href="{{  route('products.show', $product->id) }}">
                             <button class="btn btn-primary btn-sm">P</button>
